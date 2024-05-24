@@ -12,17 +12,6 @@ typedef struct {
 	int id;
 } Mossa;
 
-int** initializeGriglia(int number, int n, int m){
-	int** matr = malloc(n * sizeof(int*));
-	for (int i = 0; i < n; i++) {
-		matr[i] = malloc(m * sizeof(int));
-		for (int j = 0; j < m; j++)
-			matr[i][j] = number;
-	}
-
-	return matr;
-}
-
 void printGriglia(int matr[RIGHE][COLONNE], int n, int m) {
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < m; j++)

@@ -136,14 +136,6 @@ int Vincitore(int griglia[RIGHE][COLONNE], int n, int m) {
 	return -1;
 }
 
-int** allocGriglia(int n, int m) {
-	int** matr = malloc(sizeof(int*) * n);
-	for (int i = 0; i < m; i++)
-		matr[i] = malloc(sizeof(int) * m);
-	
-	return matr;
-}
-
 void aggiornaGriglia(Mossa mossa, int griglia[RIGHE][COLONNE], int n, int m) {
 	if (griglia[0][mossa.pos] != -1 || mossa.pos > n) {
 		return;
