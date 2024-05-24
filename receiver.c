@@ -152,13 +152,7 @@ int main(int argc, char** argv){
 		n = recvfrom(sockid, &mossaAttuale, sizeof(Mossa), 0, (struct sockaddr *) &remote_addr[currGiocatore % 2], &len);
 		aggiornaGriglia(mossaAttuale, griglia, RIGHE, COLONNE);
 		currGiocatore++;
-		/*
-		printf("IP = %s, Porta = %d, msg = %s\n", inet_ntoa(remote_addr.sin_addr), ntohs(remote_addr.sin_port), msg);
-		if (strcmp(msg, "fine\n") == 0){
-			printf("Ciao beddu.\n");
-			break;
-		}*/
-	}while (nessunVincitore(griglia, RIGHE, COLONNE));
+	} while (nessunVincitore(griglia, RIGHE, COLONNE));
 	for (int i = 0; i < 2; i++) sendto(sockid, griglia, sizeof(griglia), 0, (struct sockaddr*)&remote_addr[i], len);
 	printf("\n\nGriglia finale:\n");
 	printGriglia(griglia, RIGHE, COLONNE);

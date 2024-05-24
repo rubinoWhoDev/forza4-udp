@@ -193,8 +193,8 @@ int main(int argc, char** argv){
 		mossa.id = id;
 		printf("Tu hai l'etichetta %d.\n", id);
 		do {
-		printf("Colonna (si parte da 0): ");
-		scanf("%d", &mossa.pos);
+			printf("Colonna (si parte da 0): ");
+			scanf("%d", &mossa.pos);
 		} while (mossa.pos >= COLONNE);
 
 		sendto(sockid, &mossa, sizeof(mossa), 0, (struct sockaddr *)&remote_addr, len);
